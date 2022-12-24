@@ -6,6 +6,6 @@ type FindLooksQueryService struct {
 	lookRepository dataAccess.ILookRepository
 }
 
-func (this *FindLooksQueryService) FindLooks() []dataAccess.Look {
-	return this.lookRepository.FindLooks()
+func (findLooksQueryService *FindLooksQueryService) FindLooks() []dataAccess.Look {
+	return findLooksQueryService.lookRepository.FindLooks()
 }
