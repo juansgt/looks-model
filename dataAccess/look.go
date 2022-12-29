@@ -6,8 +6,8 @@ type Look struct {
 	Brand string
 }
 
-func NewLook(id string, name string, brand string) Look {
-	return Look{
+func NewLook(id string, name string, brand string) *Look {
+	return &Look{
 		id:    id,
 		Name:  name,
 		Brand: brand,
