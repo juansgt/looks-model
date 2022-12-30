@@ -1,4 +1,4 @@
-package services
+package findLooksService
 
 import (
 	"testing"
@@ -19,7 +19,7 @@ func TestFindLooks_correctCalling_returnExpectedValues(t *testing.T) {
 
 	// Act
 
-	looks := findLooksQueryService.FindLooks()
+	looks := findLooksQueryService.Execute()
 
 	// Assert
 
