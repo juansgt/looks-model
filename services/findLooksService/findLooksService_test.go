@@ -3,7 +3,7 @@ package findLooksService
 import (
 	"testing"
 
-	"github.com/juansgt/model-test/dataAccess"
+	"github.com/juansgt/model-test/v2/dataAccess"
 	"github.com/stretchr/testify/assert"
 )
 

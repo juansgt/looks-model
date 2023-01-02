@@ -2,7 +2,7 @@ package findLooksService
 
 import (
 	"github.com/juansgt/generics/services"
-	"github.com/juansgt/model-test/dataAccess"
+	"github.com/juansgt/model-test/v2/dataAccess"
 )
 
 type FindLooksQueryService struct {
