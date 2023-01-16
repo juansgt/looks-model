@@ -1,4 +1,4 @@
-package dataAccess
+package lookRepository
 
 type Look struct {
 	id    string

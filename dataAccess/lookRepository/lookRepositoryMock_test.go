@@ -1,8 +1,9 @@
-package dataAccess
+package lookRepository_test
 
 import (
 	"testing"
 
+	"github.com/juansgt/model-test/v2/dataAccess/lookRepository"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -13,20 +14,16 @@ func TestFindLooks_correctCalling_returnExpectedValues(t *testing.T) {
 	// Arrange
 
 	assert := assert.New(t)
-	var expectedLook *Look = &Look{
-		id:    "1",
-		Name:  "Dress",
-		Brand: "Bash",
-	}
-	lookRepositoryMock := new(LookRepositoryMock)
+	var expectedLook *lookRepository.Look = lookRepository.NewLook("1", "Dress", "Bash")
+	var lookRepository lookRepository.ILookRepository = lookRepository.NewLookRepositoryMock()
 
 	// Act
 
-	looks := lookRepositoryMock.FindLooks()
+	looks := lookRepository.FindLooks()
 
 	// Assert
 
-	assert.Equal(expectedLook.id, looks[0].id)
+	assert.Equal(expectedLook.Id(), looks[0].Id())
 	assert.Equal(expectedLook.Name, looks[0].Name)
 	assert.Equal(expectedLook.Brand, looks[0].Brand)
 }

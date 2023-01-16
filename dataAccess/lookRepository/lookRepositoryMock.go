@@ -1,6 +1,10 @@
-package dataAccess
+package lookRepository
 
 type LookRepositoryMock struct {
+}
+
+func NewLookRepositoryMock() *LookRepositoryMock {
+	return new(LookRepositoryMock)
 }
 
 func (*LookRepositoryMock) FindLooks() []Look {

@@ -1,9 +1,11 @@
-package findLooksService
+package findLooksService_test
 
 import (
 	"testing"
 
-	"github.com/juansgt/model-test/v2/dataAccess"
+	"github.com/juansgt/generics/services"
+	"github.com/juansgt/model-test/v2/dataAccess/lookRepository"
+	"github.com/juansgt/model-test/v2/services/findLooksService"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -14,8 +16,8 @@ func TestFindLooks_correctCalling_returnExpectedValues(t *testing.T) {
 	// Arrange
 
 	assert := assert.New(t)
-	var expectedLook *dataAccess.Look = dataAccess.NewLook("1", "Dress", "Bash")
-	findLooksQueryService := NewFindLooksQueryService(new(dataAccess.LookRepositoryMock))
+	var expectedLook *lookRepository.Look = lookRepository.NewLook("1", "Dress", "Bash")
+	var findLooksQueryService services.IQueryServiceNoInput[[]lookRepository.Look] = findLooksService.NewFindLooksQueryService(lookRepository.NewLookRepositoryMock())
 
 	// Act
 

@@ -1,4 +1,4 @@
-module github.com/juansgt/model-test/v2
+module github.com/juansgt/model-test/v3
 
 go 1.19
 
