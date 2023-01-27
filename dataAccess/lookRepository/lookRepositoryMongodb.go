@@ -17,14 +17,14 @@ func NewLookRepositoryMongodb(database mongo.Database) *LookRepositoryMongodb {
 	}
 }
 
-func (lookRepositoryMongodb *LookRepositoryMongodb) findLooks() []Look {
+func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 	var looks []Look
-	
+
 	cur, err := lookRepositoryMongodb.looksCollection.Find(context.TODO(), bson.D{})
 	if err != nil {
 		panic(err)
 	}
 	cur.Decode(looks)
 
-	return looks 
+	return looks
 }
