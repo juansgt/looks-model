@@ -11,7 +11,7 @@ type LookRepositoryMongodb struct {
 	looksCollection *mongo.Collection
 }
 
-func NewLookRepositoryMongodb(database mongo.Database) *LookRepositoryMongodb {
+func NewLookRepositoryMongodb(database *mongo.Database) *LookRepositoryMongodb {
 	return &LookRepositoryMongodb{
 		looksCollection: database.Collection("looks"),
 	}
