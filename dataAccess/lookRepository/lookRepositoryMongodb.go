@@ -24,7 +24,9 @@ func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 	if err != nil {
 		panic(err)
 	}
-	cur.Decode(looks)
+	if err = cur.All(context.TODO(), &looks); err != nil {
+		panic(err)
+	}
 
 	return looks
 }
