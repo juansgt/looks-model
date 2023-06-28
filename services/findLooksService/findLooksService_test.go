@@ -9,8 +9,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// TestHelloName calls greetings.Hello with a name, checking
-// for a valid return value.
 func TestFindLooks_correctCalling_returnExpectedValues(t *testing.T) {
 
 	// Arrange
