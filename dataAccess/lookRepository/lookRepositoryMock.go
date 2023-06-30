@@ -10,9 +10,9 @@ func NewLookRepositoryMock() *LookRepositoryMock {
 func (*LookRepositoryMock) FindLooks() []Look {
 	var looks []Look
 	var look *Look = &Look{
-		id:    "1",
-		Name:  "Dress",
-		Brand: "Bash",
+		id:     "1",
+		Colour: "Dress",
+		Brand:  "Bash",
 	}
 	looks = make([]Look, 0, 3)
 

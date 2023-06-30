@@ -8,9 +8,9 @@ import (
 )
 
 type lookBson struct {
-	_id   string
-	name  string
-	brand string
+	_id    string
+	colour string
+	brand  string
 }
 
 type LookRepositoryMongodb struct {
@@ -36,7 +36,7 @@ func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 	}
 
 	for _, lookBson := range looksBson {
-		looks = append(looks, *NewLook(lookBson._id, lookBson.name, lookBson.brand))
+		looks = append(looks, *NewLook(lookBson._id, lookBson.colour, lookBson.brand))
 	}
 
 	return looks

@@ -24,6 +24,6 @@ func TestFindLooks_correctCalling_returnExpectedValues(t *testing.T) {
 	// Assert
 
 	assert.Equal(expectedLook.Id(), looks[0].Id())
-	assert.Equal(expectedLook.Name, looks[0].Name)
+	assert.Equal(expectedLook.Colour, looks[0].Colour)
 	assert.Equal(expectedLook.Brand, looks[0].Brand)
 }

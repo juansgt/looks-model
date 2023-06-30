@@ -1,16 +1,16 @@
 package lookRepository
 
 type Look struct {
-	id    string
-	Name  string
-	Brand string
+	id     string
+	Colour string
+	Brand  string
 }
 
-func NewLook(id string, name string, brand string) *Look {
+func NewLook(id string, colour string, brand string) *Look {
 	return &Look{
-		id:    id,
-		Name:  name,
-		Brand: brand,
+		id:     id,
+		Colour: colour,
+		Brand:  brand,
 	}
 }
 
