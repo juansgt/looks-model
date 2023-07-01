@@ -3,7 +3,7 @@ package lookRepository_test
 import (
 	"testing"
 
-	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+	"github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
 	"github.com/stretchr/testify/assert"
 )
 

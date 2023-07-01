@@ -1,6 +1,6 @@
 package findLooksService
 
-import "github.com/juansgt/model-test/v3/dataAccess/lookRepository"
+import "github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
 
 type FindLooksQueryService struct {
 	lookRepository lookRepository.ILookRepository
