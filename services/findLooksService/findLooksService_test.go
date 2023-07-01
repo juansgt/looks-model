@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/juansgt/generics/services"
-	"github.com/juansgt/model-test/v3/dataAccess/lookRepository"
-	"github.com/juansgt/model-test/v3/services/findLooksService"
+	"github.com/juansgt/looks-model/v3/dataAccess/lookRepository"
+	"github.com/juansgt/looks-model/v3/services/findLooksService"
 	"github.com/stretchr/testify/assert"
 )
 
