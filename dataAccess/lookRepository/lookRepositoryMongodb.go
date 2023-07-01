@@ -8,9 +8,9 @@ import (
 )
 
 type lookBson struct {
-	_id    string
-	colour string
-	brand  string
+	_id    string `bson:"_id,omitempty"`
+	colour string `bson:"colour,omitempty"`
+	brand  string `bson:"brand,omitempty"`
 }
 
 type LookRepositoryMongodb struct {
@@ -27,11 +27,11 @@ func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 	var looksBson []lookBson
 	looks := make([]Look, 0)
 
-	cur, err := lookRepositoryMongodb.looksCollection.Find(context.TODO(), bson.D{})
+	cursor, err := lookRepositoryMongodb.looksCollection.Find(context.TODO(), bson.D{})
 	if err != nil {
 		panic(err)
 	}
-	if err = cur.All(context.TODO(), &looksBson); err != nil {
+	if err = cursor.All(context.TODO(), &looksBson); err != nil {
 		panic(err)
 	}
 
