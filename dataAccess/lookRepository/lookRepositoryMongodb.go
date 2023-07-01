@@ -32,12 +32,12 @@ func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 		panic(err)
 	}
 
-	cursor.Decode(looksBson)
-	/*
-		if err = cursor.All(context.TODO(), &looksBson); err != nil {
-			panic(err)
-		}
-	*/
+	// cursor.Decode(looksBson)
+
+	if err = cursor.All(context.TODO(), &looksBson); err != nil {
+		panic(err)
+	}
+
 	for _, lookBson := range looksBson {
 		looks = append(looks, *NewLook(lookBson._id, lookBson.Colour, lookBson.Brand))
 	}
