@@ -7,10 +7,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-type lookBson struct {
+type LookBson struct {
 	_id    string `bson:"_id,omitempty"`
-	colour string `bson:"colour,omitempty"`
-	brand  string `bson:"brand,omitempty"`
+	Colour string `bson:"colour,omitempty"`
+	Brand  string `bson:"brand,omitempty"`
 }
 
 type LookRepositoryMongodb struct {
@@ -24,7 +24,7 @@ func NewLookRepositoryMongodb(database *mongo.Database) *LookRepositoryMongodb {
 }
 
 func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
-	var looksBson []lookBson
+	var looksBson []LookBson
 	looks := make([]Look, 0)
 
 	cursor, err := lookRepositoryMongodb.looksCollection.Find(context.TODO(), bson.D{})
@@ -39,7 +39,7 @@ func (lookRepositoryMongodb *LookRepositoryMongodb) FindLooks() []Look {
 		}
 	*/
 	for _, lookBson := range looksBson {
-		looks = append(looks, *NewLook(lookBson._id, lookBson.colour, lookBson.brand))
+		looks = append(looks, *NewLook(lookBson._id, lookBson.Colour, lookBson.Brand))
 	}
 
 	return looks
